@@ -1,39 +1,67 @@
-    *{
-        margin:0;
-        padding: 0;
-        box-sizing: border-box;
-        text-decoration: none;
-        list-style: none;
-        scroll-behavior: smooth;
-        font-family: Arial, sans-serif;
-    }
+/* GENEL AYARLAR */
 
-  .main {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: #060418;
+    -webkit-text-size-adjust: 100%; /* iPhone'da yazı boyutu bozulmasın */
+}
+
+body {
+    overflow-x: hidden; /* yana kaymayı engeller */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ANA ARKA PLAN */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("media1.webp") center / cover no-repeat;
+}
+
+.main {
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0.5)
-    ), url("media1.webp");
+    min-height: 100svh;
+}
 
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
+
+/* NAVBAR */
+
 nav {
     position: fixed;
     top: 0;
     width: 100%;
     padding: 2em 15%;
     background: rgba(6, 4, 24, 0.4);
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     z-index: 1000;
 }
-   
-ul {
+
+nav ul {
     display: flex;
     align-items: center;
     gap: 3em;
@@ -44,21 +72,35 @@ nav ul a {
     opacity: 0.7;
     transition: 0.2s ease-in-out;
 }
+
 nav ul a:hover {
     opacity: 1;
 }
-.logo{
+
+.logo {
     color: #fff;
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: 800;
-    opacity: 0.8;
+    opacity: 0.7;
 }
-.logo:hover{
+
+.logo:hover {
     opacity: 1;
 }
+
+#menu {
+    color: #fff;
+    font-size: 3em;
+    display: none;
+    cursor: pointer;
+}
+
+
+/* BUTONLAR */
+
 .btn {
     padding: 0.5em 1em;
-    background: #0083fe;
+    background: #0a6bc6;
     color: #000;
     border-radius: 0.5em;
     font-weight: 500;
@@ -66,102 +108,588 @@ nav ul a:hover {
     font-size: 1.1em;
     border: 2px solid #fff;
     cursor: pointer;
-}   
+}
+
 .btn:hover {
-background-color:#0083fe ;
-color:#000000;
-} 
-span{
-    background: linear-gradient(to right,#180660, #1616e3);
-    background-clip :  text;
+    background-color: #1e5487;
+    color: #000;
+}
+
+.btn-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+
+/* ORTAK SECTION AYARLARI */
+
+section {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 5% 15%;
+}
+
+
+/* RENK GEÇİŞLERİ */
+
+span {
+    background: linear-gradient(to right, #4f8cff, #8a6bff);
+    -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
 }
-#menu{
-    color:#fff;
-    font-size : 3em;
-    display : none;
-} 
 
-section{
-    min-height:100vh;
-    padding :5% 15%;
-}
 
-#home{
-    display:flex;
-    flex-direction :column;
+/* HOME BÖLÜMÜ */
+
+#home {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap:2em;
-    color:#fff;
-
-}
-
-#home img{
-    width:18vw;
-    border-radius: 50%;
-    margin-top:3em;
-
-}
-
-.info-box{
-    display:flex;
-    flex-direction:column;
-    text-align:center;
-    gap:0.5em;
-    max-width:600px;
-    
-}
-.info-box h1{
-    font-size:5em;
-    font-weight:500;
-}
-.info-box h3{
-    font-size:2em;
-    font-weight: 400;
-}
-.info-box p{
-    opacity: 0.7;
-}
-.btn-box{
-    display:flex;
-    gap:1em 
-}
-.btn-box .btn:nth-of-type(2){
-    background-color:#0083fe;
-    color:#000000;
-}
-
-.btn-box .btn:nth-of-type(2):hover{
-    background-color:#180660;
+    gap: 2em;
     color: #fff;
 }
-::-webkit-scrollbar{
+
+#home img {
+    width: 18vw;
+    border-radius: 50%;
+    margin-top: 3em;
+}
+
+.info-box {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5em;
+    max-width: 600px;
+}
+
+.info-box h1 {
+    font-size: 5em;
+    font-weight: 500;
+}
+
+.info-box h3 {
+    font-size: 2em;
+    font-weight: 400;
+}
+
+.info-box p {
+    opacity: 0.7;
+}
+
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
     width: 20px;
-    background-color:#180660;
-}
-::-webkit-scrollbar-thumb{
-    background: linear-gradient(to bottom,#0083fe,#180660);
-
-}
-#about{
-    background-color:#0083fe;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:5em;
-}
-#about img{
-    width:30vw;
-    border-radius:1em;
-}
-.about-box{
-    display:flex;
-    flex-direction:column;
-    text-align:left;
-    gap:2em;
+    background-color: #180660;
 }
 
-.about-box h1{
-    
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #0083fe, #180660);
+}
+
+
+/* ABOUT BÖLÜMÜ */
+
+#about {
+    background-color: rgba(6, 4, 24, 0.3);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5em;
+}
+
+#about img {
+    width: 30vw;
+    border-radius: 1em;
+    margin-top: 0;
+}
+
+.about-box {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 2em;
+}
+
+.about-box h1 {
+    font-size: 5em;
+}
+
+.about-box h2 {
+    font-size: 4em;
+    border-bottom: 2px solid #4125f2;
+}
+
+.about-box p {
+    color: #fff;
+    opacity: 0.8;
+}
+
+
+/* SKILLS */
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.skills ul {
+    font-size: 1.5em;
+    font-weight: 200;
+
+    display: flex;
+    flex-direction: column;
+
+    color: #fff;
+    opacity: 0.8;
+    align-items: baseline;
+}
+
+.skills ul li {
+    display: flex;
+    gap: 0.5em;
+    font-size: 1.2em;
+    transition: 0.3s ease-in-out;
+}
+
+.skills ul li:hover {
+    transform: translateX(10px);
+}
+
+.skills ul li i {
+    font-size: 2em;
+}
+
+
+/* SERVICES BÖLÜMÜ */
+
+#services {
+    background-color: rgba(6, 4, 24, 0.3);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+.header {
+    text-align: center;
+    font-size: 5em;
+    margin: 0.5em auto;
+    border-bottom: 2px solid #4125f2;
+    width: 80%;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    gap: 2em;
+    width: 100%;
+}
+
+.box {
+    border: 3px solid rgb(142, 134, 212);
+    border-radius: 0.5em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    overflow: hidden;
+    padding: 3em;
+    gap: 2em;
+
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.box:hover {
+    border: 3px solid rgba(35, 25, 120, 0.8);
+}
+
+.box p {
+    opacity: 0.8;
+}
+
+.box h1 {
+    font-size: 2em;
+}
+
+.box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.5em;
+}
+
+#services img {
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+
+/* CONTACT BÖLÜMÜ */
+
+#contact {
+    background-color: rgba(6, 4, 24, 0.3);
+    min-height: auto;
+    padding-bottom: 8%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    width: 100%;
+    max-width: 700px;
+}
+
+form .input-box {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 1em;
+    width: 100%;
+}
+
+.input-box span {
+    font-size: 1.5em;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    font-size: 1.3em;
+    padding: 1em 1.5em; /* eskiden 1em 5em'di, telefonda taşıyordu */
+    border-radius: 0.5em;
+    border: none;
+    outline: none;
+}
+
+form input:focus,
+form textarea:focus {
+    border: 2px solid #0083fe;
+}
+
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 4em;
+    padding: 4em 15%;
+    background: rgba(6, 4, 24, 0.5);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    color: #fff;
+}
+
+.col-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.col-box {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.col-box i {
+    font-size: 1.5em;
+    color: #4f8cff;
+}
+
+.col-box a,
+.col-box p {
+    color: #fff;
+    opacity: 0.8;
+    word-break: break-word;
+}
+
+.col-box a:hover {
+    opacity: 1;
+}
+
+.col-right {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.col-right p {
+    opacity: 0.8;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1em;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.8em;
+    opacity: 0.7;
+    transition: 0.2s ease-in-out;
+}
+
+.social-icons a:hover {
+    opacity: 1;
+    color: #4f8cff;
+}
+
+
+/* =========================================
+   RESPONSIVE (TABLET VE TELEFON)
+   ========================================= */
+
+/* Küçük laptop / büyük tablet */
+@media (max-width: 1100px) {
+    nav {
+        padding: 1.5em 8%;
+    }
+
+    section {
+        padding: 8% 8%;
+    }
+
+    footer {
+        padding: 3em 8%;
+    }
+
+    .info-box h1 {
+        font-size: 4em;
+    }
+
+    .about-box h1 {
+        font-size: 4em;
+    }
+
+    .about-box h2 {
+        font-size: 3em;
+    }
+
+    .header {
+        font-size: 4em;
+    }
+}
+
+/* Tablet ve telefon */
+@media (max-width: 768px) {
+
+    /* Navbar: hamburger menü */
+    nav {
+        padding: 1em 5%;
+    }
+
+    .logo {
+        font-size: 1.8em;
+    }
+
+    #menu {
+        display: block;
+        font-size: 2.2em;
+    }
+
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        background: rgba(6, 4, 24, 0.95);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul a {
+        display: block;
+        padding: 1.2em 0; /* parmakla basması kolay olsun */
+    }
+
+    /* Sectionlar */
+    section {
+        padding: 90px 6% 40px;
+    }
+
+    /* Home */
+    #home img {
+        width: 45vw;
+        margin-top: 1em;
+    }
+
+    .info-box h1 {
+        font-size: 2.6em;
+    }
+
+    .info-box h3 {
+        font-size: 1.3em;
+    }
+
+    .btn-box {
+        justify-content: center;
+    }
+
+    /* About: alt alta */
+    #about {
+        flex-direction: column;
+        gap: 2em;
+    }
+
+    #about img {
+        width: 70%;
+    }
+
+    .about-box {
+        gap: 1.2em;
+    }
+
+    .about-box h1 {
+        font-size: 2.6em;
+    }
+
+    .about-box h2 {
+        font-size: 2em;
+    }
+
+    .skills ul {
+        font-size: 1.1em;
+    }
+
+    /* Services */
+    .header {
+        font-size: 2.6em;
+        width: 100%;
+    }
+
+    .box {
+        padding: 1.5em;
+        gap: 1.2em;
+    }
+
+    .box h1 {
+        font-size: 1.5em;
+    }
+
+    .box img {
+        height: 180px;
+    }
+
+    /* Contact */
+    form input,
+    form textarea {
+        font-size: 1.1em;
+        padding: 0.9em 1em;
+    }
+
+    .input-box span {
+        font-size: 1.2em;
+    }
+
+    /* Footer: alt alta */
+    footer {
+        flex-direction: column;
+        gap: 2.5em;
+        padding: 2.5em 6%;
+    }
+
+    .col-right {
+        max-width: 100%;
+    }
+
+    /* İnce scrollbar */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+}
+
+/* Küçük telefonlar */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5em;
+    }
+
+    #home img {
+        width: 55vw;
+    }
+
+    .info-box h1 {
+        font-size: 2.1em;
+    }
+
+    .info-box h3 {
+        font-size: 1.1em;
+    }
+
+    .btn {
+        font-size: 1em;
+        padding: 0.6em 1.2em;
+    }
+
+    #about img {
+        width: 85%;
+    }
+
+    .about-box h1 {
+        font-size: 2.1em;
+    }
+
+    .about-box h2 {
+        font-size: 1.6em;
+    }
+
+    .header {
+        font-size: 2em;
+    }
+
+    .services-container {
+        gap: 1.2em;
+    }
+
+    .box img {
+        height: 160px;
+    }
+
+    .social-icons a {
+        font-size: 1.6em;
+    }
+}
+
+/* Hover olmayan cihazlarda (telefon) hover efektlerini kapat */
+@media (hover: none) {
+    .skills ul li:hover {
+        transform: none;
+    }
 }

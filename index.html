@@ -1,89 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+    <link href="https://cdn.boxicons.com/3.0.8/fonts/brands/boxicons-brands.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Webpage Design</title>
+
     <link href="https://cdn.boxicons.com/3.0.8/fonts/filled/boxicons-filled.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div class ="main">
 
-   <nav>
-        <a href="#" class="logo"><span>Koray Balkan</span></a>
+<div class="main">
 
-        <ul  class="links">
-            
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-            <i class='bx bx-menu-alt-right' id="menu"></i>
+    <!-- NAVBAR -->
+    <nav>
+        <a href="#home" class="logo">
+            <span>Koray Balkan</span>
+        </a>
 
+        <ul class="links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
 
-      <a href="#contact"   class="btn">Contact Me</a>
+        <i class="bx bx-menu-alt-right" id="menu"></i>
+
+        <a href="#contact" class="btn">Contact Me</a>
     </nav>
-  
-    <section id="home" >
-
-    
-
-<div class="info-box">
-    <h1><span>Hello,I'm Koray</span></h1>
-    <h3><span> Web Debeloper</span>based in Warsaw</h3>
-    <p>dsadasdsadsadasdsadasdasdasdasdasdasdsadasd</p>
-</div>
 
 
-<div class="btn-box">
-    <div class="btn">Hire</div>
-    <div class="btn">Contact Me</div>
-</div>
-    </section>
-    
-    <section id="about">
-        <div class="about-box">
-            <h1><span>About Me</span></h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos temporibus laboriosam animi ullam officia sunt amet ex magni sapiente suscipit, id rerum dolores, sequi iure quisquam, voluptates sint nulla deserunt.
+    <!-- HOME SECTION -->
+    <section id="home">
+
+        <img src="koray.jpeg" alt="Koray Balkan">
+
+        <div class="info-box">
+            <h1><span>Hello, I'm Koray</span></h1>
+
+            <h3>
+                <span>Web Developer</span> based in Warsaw
+            </h3>
+
+            <p>
+                dsadasdsadsadasdsadasdasdasdasdasdasdsadasd
             </p>
-            
+        </div>
+
+        <div class="btn-box">
+            <div class="btn">Hire</div>
+            <div class="btn">Contact Me</div>
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+
+        <div class="about-box">
+
+            <h1><span>About Me</span></h1>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Eos temporibus laboriosam animi ullam officia sunt amet
+                ex magni sapiente suscipit, id rerum dolores, sequi iure
+                quisquam, voluptates sint nulla deserunt.
+            </p>
+
             <h2><span>Skills</span></h2>
 
-            <div calss="skills"></div>
-            <ul>
-                <li>
-                    <span>HTML</span>
-                </li>
+            <div class="skills">
 
-                <li>
-                    <span>CSS</span>
-                </li>
+                <ul>
+                    <li><span><i class="bxf bx-chevron-right"></i> HTML</span></li>
+                    <li><span><i class="bxf bx-chevron-right"></i> CSS</span></li>
+                    <li><span><i class="bxf bx-chevron-right"></i> JavaScript</span></li>
+                    <li><span><i class="bxf bx-chevron-right"></i> MySQL</span></li>
+                    <li><span><i class="bxf bx-chevron-right"></i> Java</span></li>
+                    <li><span><i class="bxf bx-chevron-right"></i> C</span></li>
+                    <li><span><i class="bxf bx-chevron-right"></i> C++</span></li>
+                </ul>
 
-                <li>
-                    <span>JavaScript</span>
-                </li>
+            </div>
 
-                <li>
-                    <span>MySQL</span>
-                </li>
-                
-                <li>
-                    <span>Java</span>
-                </li>
-                
-                <li>
-                    <span>C</span>
-                <li>
-                        <span>C++</span>
-                </li>
-            </ul>
+        </div>
+
+        <img src="koray.jpeg" alt="Koray Balkan">
+
+    </section>
+
+
+    <!-- SERVICES SECTION -->
+    <section id="services">
+
+        <h1 class="header">
+            <span>Services</span>
+        </h1>
+
+        <div class="services-container">
+
+            <div class="box">
+
+                <h1><span>Web Design</span></h1>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Eos temporibus laboriosam animi ullam officia sunt amet
+                    ex magni sapiente suscipit.
+                </p>
+
+                <img src="design.avif" alt="Web Design">
+
+            </div>
+
+
+            <div class="box">
+
+                <h1><span>Web Development</span></h1>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Eos temporibus laboriosam animi ullam officia sunt amet
+                    ex magni sapiente suscipit.
+                </p>
+
+                <img src="development.jpeg" alt="Web Development">
+
+            </div>
+
+
+            <div class="box">
+
+                <h1><span>Embedded Systems</span></h1>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Eos temporibus laboriosam animi ullam officia sunt amet
+                    ex magni sapiente suscipit.
+                </p>
+
+                <img src="embedded.jpg" alt="Embedded Systems">
+
+            </div>
 
         </div>
 
     </section>
-      
-    <script src="script.js"></script>  
-</div>       
+
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+
+        <h1 class="header">
+            <span>Contact</span>
+        </h1>
+    
+        <form action="#">
+        <div class="input-box">
+            <span>Full Name</span>
+            <input type="text" placeholder="Enter Your Full Name" required>
+    </div>        
+
+        <div class="input-box">
+            <span>Your Email</span>
+            <input type="text" placeholder="Enter Your Email" required>
+    </div>
+
+        <div class="input-box">
+            <span>Your Massage</span>
+            <input type="text" placeholder="Enter Your Massage" required>
+    </div>
+
+    <div class="btn">Submit</div>
+        </form>
+    </section>
+
+</div>
+
+<footer>
+    <div class="col-left">
+
+        <div class="col-box">
+            <i class="bxf bx-location-alt-2"></i>
+            <p>Poland, Warsaw</p>
+        </div>
+
+        <div class="col-box">
+            <i class="bxf bx-phone"></i>
+            <a href="tel:+48576480487">+48 576 480 487</a>
+        </div>
+
+        <div class="col-box">
+            <i class="bxf bx-envelope"></i>
+            <a href="mailto:korayblkan@gmail.com">korayblkan@gmail.com</a>
+        </div>
+
+    </div>
+
+    <div class="col-right">
+        <h3>About My Services</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eos temporibus laboriosam animi ullam officia sunt amet
+            ex magni sapiente suscipit, id rerum dolores, sequi iure
+            quisquam, voluptates sint nulla deserunt.
+        </p>
+
+        <div class="social-icons">
+            <a href="https://github.com/kokospace?tab=projects" target="_blank"><i class="bxl bx-github"></i></a>
+            <a href="https://linkedin.com/" target="_blank"><i class="bxl bx-linkedin"></i></a>
+        </div>
+    </div>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script src="script.js"></script>
+
 </body>
-</html>     
+</html>
